@@ -1,10 +1,10 @@
-var AV = require('av');
 var tables = require('./tables');
 var MP3FrameHeader = require('./header');
 var MP3Frame = require('./frame');
 var huffman = require('./huffman');
 var IMDCT = require('./imdct');
 var utils = require('./utils');
+var Bitstream = require('./av_bitstream');
 
 function MP3SideInfo() {
     this.main_data_begin = null;
@@ -123,7 +123,7 @@ Layer3.prototype.decode = function(stream, frame) {
                 stream.md_len += frame_used;
             }
             
-            ptr = new AV.Bitstream(AV.Stream.fromBuffer(new AV.Buffer(stream.main_data)));
+            ptr = new Bitstream(AV.Stream.fromBuffer(new AV.Buffer(stream.main_data)));//TODO check we need this? and how to adopt
             ptr.advance((old_md_len - si.main_data_begin) * 8);
         }
     }

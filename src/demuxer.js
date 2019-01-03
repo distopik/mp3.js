@@ -1,6 +1,6 @@
 var AV = require('av');
-var ID3v23Stream = require('./id3').ID3v23Stream;
-var ID3v22Stream = require('./id3').ID3v22Stream;
+// var ID3v23Stream = require('./id3').ID3v23Stream;
+// var ID3v22Stream = require('./id3').ID3v22Stream;
 var MP3FrameHeader = require('./header');
 var MP3Stream = require('./stream');
 
@@ -152,14 +152,14 @@ var MP3Demuxer = AV.Demuxer.extend(function() {
             if (id3header && !this.metadata) {
                 stream.advance(10);
 
-                if (id3header.major > 2) {
-                    var id3 = new ID3v23Stream(id3header, stream);
-                } else {
-                    var id3 = new ID3v22Stream(id3header, stream);
-                }
+                // if (id3header.major > 2) {
+                //     var id3 = new ID3v23Stream(id3header, stream);
+                // } else {
+                //     var id3 = new ID3v22Stream(id3header, stream);
+                // }
 
-                this.metadata = id3.read();
-                this.emit('metadata', this.metadata);
+                this.metadata = {}//id3.read();
+                // this.emit('metadata', this.metadata);
                 stream.seek(10 + id3header.length);
             }
 

@@ -1,4 +1,3 @@
-var AV = require('av');
 var MP3FrameHeader = require('./header');
 
 function MP3Stream(stream) {
