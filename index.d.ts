@@ -20,6 +20,9 @@ declare module 'mp3' {
         numBuffers: number;
         availableBytes: number;
         availableBuffers: number;
+
+        reset(): Array;
+        append(buffer: any): number;
     }
     export class Stream {
         constructor(list: BufferList)
