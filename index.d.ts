@@ -2,7 +2,9 @@
 declare module 'mp3' {
 
     export class MP3FrameHeader { }
-    export class MP3Stream { }
+    export class MP3Stream {
+        constructor(bitstream: Bitstream);
+    }
     export class MP3Frame { }
     export class MP3Synth { }
     export class Layer1 { }
@@ -10,10 +12,12 @@ declare module 'mp3' {
     export class Layer3 { }
 
 
-    export class Bitstream { 
-        constructor(list: BufferList)
+    export class Bitstream {
+        constructor(stream: Stream)
     }
     export class AVBuffer { }
     export class BufferList { }
-    export class Stream { }
+    export class Stream {
+        constructor(list: BufferList)
+    }
 }
