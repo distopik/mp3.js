@@ -22,7 +22,9 @@ declare module 'mp3' {
     export class Bitstream {
         constructor(stream: Stream)
     }
-    export class AVBuffer { }
+    export class AVBuffer {
+        constructor(buf: Uint8Array)
+    }
     export class BufferList {
         numBuffers: number;
         availableBytes: number;
