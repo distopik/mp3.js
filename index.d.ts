@@ -16,7 +16,11 @@ declare module 'mp3' {
         constructor(stream: Stream)
     }
     export class AVBuffer { }
-    export class BufferList { }
+    export class BufferList {
+        numBuffers: number;
+        availableBytes: number;
+        availableBuffers: number;
+    }
     export class Stream {
         constructor(list: BufferList)
     }
