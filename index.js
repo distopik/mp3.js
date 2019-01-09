@@ -9,7 +9,7 @@ exports.Layer2 = require ('./src/layer2');
 exports.Layer3 = require ('./src/layer3');
 
 
-exports.Bitstream = require('/src/av_bitstream');
-exports.AVBuffer = require('/src/av_buffer');
-exports.BufferList = require('/src/av_bufferlist');
-exports.Stream = require('/src/av_stream');
+exports.Bitstream = require('./src/av_bitstream');
+exports.AVBuffer = require('./src/av_buffer');
+exports.BufferList = require('./src/av_bufferlist');
+exports.Stream = require('./src/av_stream');
