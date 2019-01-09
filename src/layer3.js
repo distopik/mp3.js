@@ -5,6 +5,8 @@ var huffman = require('./huffman');
 var IMDCT = require('./imdct');
 var utils = require('./utils');
 var Bitstream = require('./av_bitstream');
+var AVBuffer = require('./av_buffer');
+var Stream = require('./av_stream');
 
 function MP3SideInfo() {
     this.main_data_begin = null;
@@ -123,7 +125,7 @@ Layer3.prototype.decode = function(stream, frame) {
                 stream.md_len += frame_used;
             }
             
-            ptr = new Bitstream(AV.Stream.fromBuffer(new AV.Buffer(stream.main_data)));//TODO check we need this? and how to adopt
+            ptr = new Bitstream(Stream.fromBuffer(new AVBuffer(stream.main_data)));
             ptr.advance((old_md_len - si.main_data_begin) * 8);
         }
     }
