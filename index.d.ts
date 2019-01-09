@@ -4,6 +4,8 @@ declare module 'mp3' {
     export class MP3FrameHeader { }
     export class MP3Stream {
         constructor(bitstream: Bitstream);
+
+        reset(offset: number = null): void;
     }
     export class MP3Frame {
 
