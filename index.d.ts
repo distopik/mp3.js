@@ -10,7 +10,9 @@ declare module 'mp3' {
     export class Layer3 { }
 
 
-    export class Bitstream { }
+    export class Bitstream { 
+        constructor(list: BufferList)
+    }
     export class AVBuffer { }
     export class BufferList { }
     export class Stream { }
